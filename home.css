@@ -1,0 +1,267 @@
+
+a{
+    text-decoration: none;
+}
+
+#header{
+    height:60px;
+    background-color:#edb312;
+}
+
+#icon{
+    float: left;
+    margin-left:1%;
+    margin-top:-1%
+}
+
+
+#social{
+    float: right; 
+}
+
+.slogo{
+    height:50px;
+    width:50px;
+}
+
+#search{
+    height: 400px;
+    width: 100%;
+    background-image: url(images/food-wallpaper.png);
+    background-repeat: no-repeat;
+    background-size:100% 400px;
+    margin-top: -2%;
+}
+
+#logo{
+    height: 100px;
+    width: 100px;
+    background-color:#edb312;
+    border-radius: 50%;
+    margin-left: 45%;
+    margin-top:6%;
+    position:absolute;
+    animation:revolve 5s infinite
+}
+
+@keyframes revolve{
+    0% {transform:rotate(30deg)}
+    25% {transform:rotate(90deg)}
+    50% {transform:rotate(180deg)}
+    75% {transform:rotate(270deg)}
+    100% {transform:rotate(360deg)}
+
+}
+#logo>span{
+    margin-left: 28%;
+    margin-top:16%;
+    position:absolute;
+    font-size: 60px;
+}
+
+#heading{
+    margin-left: 24%;
+    margin-top: 15%;
+    position: absolute;
+    font-size: 41px;
+    color: #edb312;
+}
+
+.dropdown{
+    height: 60px;
+    width: 50%;
+    margin-left:31%;
+    margin-top:21%;
+    position: absolute;
+}
+
+select{
+    height:60px;
+    width:30%;
+    font-size:20px;
+    text-align:center;
+}
+
+.restSelect{
+    width:40%;
+}
+
+/*QuickSearch CSS*/
+#quickSearch{
+    width:80%;
+    margin-left:10%;
+    margin-top: 2%;
+}
+
+#quickheading{
+    text-align: center;
+    font-size:30px;
+    font-weight:bold;
+    color:#edb312;
+    display:block;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+#subquickheading{
+    text-align: center;
+    font-size:20px;
+    color:gray;
+    display:block;
+    line-height:3;
+}
+
+.tileContainer{
+    height:180px;
+    width:30%;
+    display:inline-block;
+    margin-left:2%;
+    margin-top:2%;
+    box-shadow: 10px 20px 10px gray;
+    border-radius: 20px;
+}
+
+.tileContainer:hover{
+    transform:scale(1.1)
+
+}
+
+.tileComponent1{
+    height:180px;
+    width:50%;
+    float:left;
+}
+
+.tileComponent1 > img{
+    height:180px;
+    width:100%;
+}
+
+.tileComponent2{
+    width:45%;
+    margin-top: 16%;
+    margin-left: 5%;
+    float:left;
+}
+
+.componentheading > a{
+    color:#edb312;
+    font-size:25px;
+}
+
+.componentSubheading{
+    color:gray;
+    font-size:15px;
+}
+/*footer CSS*/
+#footer{
+    height:120px;
+    width:100%;
+    margin-top: 5%;
+    background-color:#edb312;
+}
+
+#footText{
+    text-align: center;
+}
+
+.footDiv{
+    height:59px;
+    width:33%;
+    float: left;
+    border-right: 2px solid black;
+    text-align: center;
+}
+
+.noBorder{
+    border:none 
+}
+
+@media screen  and (max-width:1400px){
+    body{
+        background-color:whitesmoke;
+    }
+
+}
+
+@media screen  and (max-width:1200px){
+    body{
+        background-color:whitesmoke;
+    }
+    .dropdown {
+        width: 60%;
+        margin-left: 28%;
+        margin-top: 26%;
+    }
+    #heading {
+        margin-left: 23%;
+        margin-top: 19%;
+        font-size: 37px;
+    }
+    #logo {
+        margin-top: 8%;
+    }
+}
+
+@media screen  and (max-width:1000px){
+    body{
+        background-color:whitesmoke;;
+    }
+    .dropdown {
+        margin-left: 23%;
+        margin-top: 30%;
+        width:73%;
+    }
+    #heading {
+        margin-left: 23%;
+        margin-top: 24%;
+        font-size: 30px;
+    }
+    #logo {
+        margin-left: 43%;
+        margin-top:10%;
+    }
+
+}
+
+@media screen  and (max-width:800px){
+    body{
+        background-color:whitesmoke;;
+    }
+    .dropdown {
+        margin-left: 24%;
+        margin-top: 45%;
+    }
+    #heading {
+        margin-left: 23%;
+        margin-top: 36%;
+        font-size: 19px;
+    }
+    #logo {
+        margin-top: 15%;
+        margin-left: 42%;
+    }
+    .tileContainer {
+        width: 100%;
+    }
+}
+
+@media screen  and (max-width:500px){
+    body{
+        background-color:whitesmoke;;
+    }
+    #logo {
+        height: 85px;
+        width: 85px;
+        margin-left: 40%;
+        margin-top: 20%;
+    }
+    .dropdown {
+        margin-left: 24%;
+        margin-top: 55%;
+    }
+    #heading {
+        margin-left: 24%;
+        margin-top: 44%;
+        font-size: 16px;
+    }
+}

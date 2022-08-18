@@ -1,0 +1,329 @@
+body{
+    margin: auto;
+}
+/*header css*/    
+#header{
+    height: 60px;
+    width: 100%;
+    background-color: white;
+}
+#icon{
+    float: left;
+    margin-left: 1%;
+    margin-top: -1%;
+    color: black;
+
+}
+#add{
+    float: right;
+    color: black;
+    font-size: 26px;
+    margin-left:0%;
+    margin-top: 1%;
+}
+.dropdown{
+    height: 40px;
+    width: 60%;
+    margin-left:12%;
+    margin-top: 1%;
+  
+    position:absolute
+}
+select{
+    height: 40px;
+    width: 40%;
+    font-size: 20px;
+    font-style: italic;
+    
+}
+.restselect{
+    width: 59%;
+}
+
+/* filter css */
+#type{
+    height: 50px;
+    width: 80%;
+    
+    margin-top: 2%;
+    margin-left: 10%;
+    
+}
+
+.filterbox{
+    height: 36px;
+    width: 15%;
+    border:2px solid whitesmoke;
+    background-color: whitesmoke;
+    margin-left: 1%;
+    float: left;
+    text-align: center;
+    border-radius: 13%;
+   
+    
+    
+}
+
+.filterbox > span{
+    font-size: 22px;
+    text-align: center;
+    
+
+} 
+    
+
+
+
+
+
+
+/* inspiration */
+#inspirationblock{
+    height: 240px;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+    margin-top: 2%;
+}
+#insborder{
+    height: 239px;
+    width: 80%;
+    
+    margin-top: 2%;
+    margin-left: 10%;
+
+}
+#insheading{
+    font-size: 28px;
+    margin-left: 1%;
+    font-family: okra,Helvetica,sans-serif;
+   color: rgb(54, 54, 54);
+    
+    
+
+}
+.insbox{
+    height: 200px;
+    width: 15%;
+    
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
+    
+
+}
+.insround{
+    height: 160px;
+    width: 99%;
+    border: 1px solid whitesmoke;
+    border-radius: 60%;
+
+}
+.insround > img{
+    height: 160px;
+    width: 100%;
+    border: 1px solid whitesmoke;
+    border-radius: 60%;
+}
+
+.inssquare{
+    height: 37px;
+    width: 99%;
+    
+    text-align: center;
+    margin-top: 3%;
+    
+
+}
+.inssquare > span{
+   font-size: 22px;
+   text-align: center;
+   margin-left: 5%;
+   margin-top: 2%;
+   font-family: okra,Helvetica,sans-serif;
+   color: rgb(54, 54, 54);
+}
+
+
+
+
+
+/* top brands css */
+#brands{
+    height: 275Px;
+    width: 80%;
+    
+    margin-top: 2%;
+    margin-left: 10%;
+}
+#brandsheading{
+   font-size: 30px;
+   color: grey;
+   margin-left: 3%;
+}
+
+
+
+
+.brandsbox{
+    height: 229Px;
+    width: 13%;
+    
+    margin-top: 1%;
+    margin-left: 3%;
+    float: left;
+
+    
+}
+
+.brandsround{
+    height: 150px;
+    width: 100%;
+    
+    border-radius: 74%;
+
+}
+.brandssquare{
+    height: 76px;
+    width: 100%;
+    
+    
+
+
+}
+.brandsround > img{
+    height: 150px;
+    width: 100%;
+   
+    border-radius: 74%;
+
+}
+.brandssquare > h1{
+    font-size: 18px;
+    text-align: center;
+}
+.brandssquare > h2{
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+
+/* many of items css */
+#varity{
+    height: 1000Px;
+    width: 80%;
+    
+    margin-top: 2%;
+    margin-left: 10%;
+}
+#varity > h3{
+    font-size: 30px;
+    margin-left: 2%;
+    line-height: 1%;
+    
+}
+.varitybox{
+    height: 400px;
+    width: 29%;
+    border: 10px solid white;
+    float: left;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 10%;
+
+}
+.varityimgpart{
+    height: 290px;
+    width: 100%;
+    
+    position: relative;
+
+
+
+}
+.varityimgpart > img{
+    height: 290px;
+    width: 100%;
+    border-radius: 10%;
+
+}
+.varitydisheading{
+    font-size: 25px;
+    line-height: 28px;
+
+
+}
+.varitydissubheading{
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+.varityimgdis{
+    height: 107px;
+    width: 70%;
+    
+    position: relative;
+
+
+
+}
+.varityprize{
+    height: 106px;
+    width: 42%;
+    margin-left: 100%;
+    margin-top: -24%;
+    position: absolute;
+    
+
+}
+.varityprize > p{
+    margin-top: 30%;
+
+    
+}
+
+/*Footer css*/
+#footer{
+    height: 150px;
+    width: 100%;
+    background-color: rgb(92 90 90);
+}
+#copytext{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin top: 1%;
+
+}
+.footdev{
+    height: 100px;
+    width: 32%;
+    
+    float: left;
+    margin-left: 1%;
+
+}
+.footheading{
+    font-size: 37px;
+    text-align: center;
+    color: whitesmoke;
+    line-height: 85%;
+
+}
+.footsubheading{
+    font-size: 22px;
+    text-align: center;
+    color: whitesmoke;
+    line-height: 26%;
+
+}
+.slogo{
+    height: 50px;
+    width: 50px;
+    margin-top: 2%;
+    margin-left: 10%;
+    
+
+}

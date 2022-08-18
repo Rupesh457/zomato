@@ -5,6 +5,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="home.css"/>
+        <script src="home.js"></script>
+        <script>
+            function changemode(){
+               let mybody = document.body
+               mybody.classList.toggle('mydark');
+            }
+        </script>
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -21,12 +28,23 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a id="geo">My location</a></li>
+                        <li><a type="button" class="btn btn" onClick="changemode()">Change mode</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        
                     </ul>
                 </div>
             </div>    
         </nav>
+        <div id="coupon">
+            <div class="couponbody">
+                Today's Special Offer
+                <p class="offer">50% off</p>
+            </div>
+           <div class="couponbtn"> <button type="button" onClick="closecoupon()">&times;</button>
+            </div>
+        </div>
         <div id="search">
             <div id="logo">
                 <span>R!</span>
@@ -34,18 +52,12 @@
             <div id="heading">
                 Find the Best Restaurants Near You
             </div>
-            <div class="dropdown">
-                <select>
+            <div class="dropdown" >
+                <select id="city" onChange="getRestaurants()">
                     <option>Select Your City</option>
-                    <option>Delhi</option>
-                    <option>Mumbai</option>
-                    <option>Pune</option>
                 </select>
-                <select class="restSelect">
-                    <option>Select Your Restaurants</option>
-                    <option>Cafe Mania</option>
-                    <option>Hotel Taj</option>
-                    <option>Roll House</option>
+                <select class="restSelect" id="restaurants">
+                    <option>Select Your Restaurants</option>  
                 </select>
             </div>
         </div>
@@ -63,7 +75,7 @@
                     </div>
                     <div class="tileComponent2">
                         <div class="componentheading">
-                            <a href="../Listingpage/listing.html">Breakfast</a>
+                            <a href="./listing.html">Breakfast</a>
                         </div>
                         <div class="componentSubheading">
                             Best Place for Breakfast
@@ -76,7 +88,7 @@
                     </div>
                     <div class="tileComponent2">
                         <div class="componentheading">
-                            <a href="../Listingpage/listing.html">Lunch</a>
+                            <a href="./listing.html">Lunch</a>
                         </div>
                         <div class="componentSubheading">
                             Best Place for Lunch
@@ -85,24 +97,11 @@
                 </div>
                 <div class="tileContainer">
                     <div class="tileComponent1">
-                        <img src="Images/drinks1.jpg" alt="Drinks"/>
+                        <img src="Images/dinne1.jpg" alt="dinner"/>
                     </div>
                     <div class="tileComponent2">
                         <div class="componentheading">
-                            <a href="../Listingpage/listing.html">Drinks</a>
-                        </div>
-                        <div class="componentSubheading">
-                            Best Place for Drinks
-                        </div>
-                    </div>
-                </div>
-                <div class="tileContainer">
-                    <div class="tileComponent1">
-                        <img src="Images/dinne1.jpg" alt="Dinner"/>
-                    </div>
-                    <div class="tileComponent2">
-                        <div class="componentheading">
-                            <a href="../Listingpage/listing.html">Dinner</a>
+                            <a href="./listing.html">Dinner</a>
                         </div>
                         <div class="componentSubheading">
                             Best Place for Dinner
@@ -111,27 +110,40 @@
                 </div>
                 <div class="tileContainer">
                     <div class="tileComponent1">
-                        <img src="Images/nightlife.png" alt="Nightlife"/>
+                        <img src= "Images/dessert1.jpg" alt="Snacks"/>
                     </div>
                     <div class="tileComponent2">
                         <div class="componentheading">
-                            <a href="../Listingpage/listing.html">NightLife</a>
+                            <a href="./listing.html">Snacks</a>
                         </div>
                         <div class="componentSubheading">
-                            Best Place for NightLife
+                            Best Place for Snacks
                         </div>
                     </div>
                 </div>
                 <div class="tileContainer">
                     <div class="tileComponent1">
-                        <img src="Images/dessert1.jpg" alt="Dessert"/>
+                        <img src= "Images/drinks1.jpg" alt="Drinks"/>
                     </div>
                     <div class="tileComponent2">
                         <div class="componentheading">
-                            <a href="../Listingpage/listing.html">Dessert</a>
+                            <a href="./listing.html">Drinks</a>
                         </div>
                         <div class="componentSubheading">
-                            Best Place for Dessert
+                            Best Place for Dinner
+                        </div>
+                    </div>
+                </div>
+                <div class="tileContainer">
+                    <div class="tileComponent1">
+                        <img src= "Images/nightlife.png" alt="Nightlife"/>
+                    </div>
+                    <div class="tileComponent2">
+                        <div class="componentheading">
+                            <a href="./listing.html">Nightlife</a>
+                        </div>
+                        <div class="componentSubheading">
+                            Best Place for nightlife
                         </div>
                     </div>
                 </div>
@@ -153,5 +165,42 @@
                 <p>About Us</p>
             </div>    
         </div>
+        <script>
+            let x = document.getElementById("geo");
+                  function geolocation(){
+                    if(navigator.geolocation){
+                         navigator.geolocation.getCurrentPosition(myposition)
+                      }else{
+                          x.innerText="Geo not Supported"
+                     }
+                  }
+
+                  function myposition(data){
+                    // console.log(data)
+                    // x.innerText=`latitude is ${data.coords.latitude} and longitude is ${data.coords.longitude}`
+                    let latitude = data.coords.latitude;
+                    let longitude = data.coords.longitude;
+                    const url =`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+
+
+                    ///api calling
+                    fetch(url,{method:'GET'})
+                    ////return promise
+                    .then((res) => res.json())
+                    ////return data
+                    .then((data) => {
+                      let cityname = data.city.name
+                      let wheather = data.list[0].temp.night
+                      x.innerText = `${cityname} at ${wheather}°C`;
+                    })
+                    
+                  }
+
+        </script>
+        <script>
+            window.onload = loadcoupon();
+            window.onload = geolocation();
+            window.onload = getcity();
+        </script>
     </body>
 </html>
